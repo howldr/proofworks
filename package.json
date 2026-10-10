@@ -1,0 +1,39 @@
+{
+  "name": "howldr-proofworks",
+  "version": "0.1.0",
+  "description": "howldr ProofWorks — governance evidence platform powered by LiquidFiles (Policy Hub · Evidence Locker · Risk Register)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run migrate && node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "node scripts/migrate.js",
+    "create-tenant": "node scripts/create-tenant.js",
+    "invite-user": "node scripts/invite-user.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "policy",
+    "compliance",
+    "governance",
+    "liquidfiles",
+    "howldr"
+  ],
+  "author": "howldr Services Group, LLC <hello@howldr.com> (https://howldr.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.106.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^3.0.0",
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "supertest": "^7.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
