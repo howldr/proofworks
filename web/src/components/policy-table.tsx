@@ -15,8 +15,10 @@ import {
   type Policy,
 } from "@/lib/policies";
 
-function ReviewCell({ date }: { date: string }) {
-  const d = daysUntil(date);
+function ReviewCell({ date }: { date: string | null }) {
+  const d = date ? daysUntil(date) : NaN;
+  // No review date yet (a fresh draft) — say nothing rather than "in NaNd".
+  if (Number.isNaN(d)) return <span className="text-muted-foreground">—</span>;
   const overdue = d < 0;
   const soon = d >= 0 && d <= 30;
   return (

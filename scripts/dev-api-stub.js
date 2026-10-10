@@ -169,7 +169,7 @@ const SETTINGS = {
   integrations: {
     liquidFiles: { configured: true, host: 'sft.howldr.com' },
     invites: { configured: true },
-    app: { host: 'policyhub.howldr.com' },
+    app: { host: 'proofworks.howldr.com' },
   },
 };
 

@@ -27,11 +27,11 @@ const AUTH = {
 // and route shape are defined in exactly one place. The web app is a static
 // export, so the only policy route is /policies/view?id=… — NOT /policies/:id
 // (which 404s). APP_BASE_URL must point at the web app (e.g.
-// https://policyhub.howldr.com), never the LiquidFiles appliance.
+// https://proofworks.howldr.com), never the LiquidFiles appliance.
 
 /** Web app origin, trailing slashes stripped so links never get a double `//`. */
 function appBaseUrl() {
-  return (process.env.APP_BASE_URL || 'https://policyhub.howldr.com').replace(/\/+$/, '');
+  return (process.env.APP_BASE_URL || 'https://proofworks.howldr.com').replace(/\/+$/, '');
 }
 
 /** Canonical deep link to a policy's detail page. */

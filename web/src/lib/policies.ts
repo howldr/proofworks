@@ -147,7 +147,8 @@ export const DEMO_POLICIES: Policy[] = [
 
 /** Days from today (2026-06-04 baseline) until an ISO date. */
 export function daysUntil(isoDate: string, today = new Date()): number {
-  const d = new Date(isoDate + "T00:00:00Z");
+  // Accept a bare date or a full timestamp; only the day matters.
+  const d = new Date(isoDate.slice(0, 10) + "T00:00:00Z");
   const ms = d.getTime() - today.getTime();
   return Math.round(ms / 86_400_000);
 }

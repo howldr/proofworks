@@ -2485,7 +2485,7 @@ describe('GET /api/settings', () => {
   test('admin gets tenant + cadence + integration status, no secrets', async () => {
     process.env.LIQUIDFILES_BASE_URL = 'https://sft.howldr.com';
     process.env.LIQUIDFILES_API_KEY  = 'secret-key';
-    process.env.APP_BASE_URL         = 'https://policyhub.howldr.com';
+    process.env.APP_BASE_URL         = 'https://proofworks.howldr.com';
     admin.isInviteConfigured.mockReturnValue(true);
     try {
       const res = await asUser(request(app).get('/api/settings'), USERS.admin);

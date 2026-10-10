@@ -15,16 +15,16 @@ describe('email app links', () => {
 
   test('falls back to the app host when APP_BASE_URL is unset', () => {
     delete process.env.APP_BASE_URL;
-    expect(appBaseUrl()).toBe('https://policyhub.howldr.com');
+    expect(appBaseUrl()).toBe('https://proofworks.howldr.com');
     expect(policyUrl('POL-2026-001')).toBe(
-      'https://policyhub.howldr.com/policies/view?id=POL-2026-001'
+      'https://proofworks.howldr.com/policies/view?id=POL-2026-001'
     );
   });
 
   test('strips trailing slashes so links never get a double //', () => {
-    process.env.APP_BASE_URL = 'https://policyhub.howldr.com//';
+    process.env.APP_BASE_URL = 'https://proofworks.howldr.com//';
     expect(policyUrl('POL-2026-001')).toBe(
-      'https://policyhub.howldr.com/policies/view?id=POL-2026-001'
+      'https://proofworks.howldr.com/policies/view?id=POL-2026-001'
     );
   });
 
